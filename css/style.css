@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=Lato:wght@300;400&display=swap");
+/* 
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=Lato:wght@300;400&display=swap" rel="stylesheet">  */
+
+/* 
+/* Color Theme Swatches in RGBA */
+$JS2CA-1-rgba: rgba(242, 242, 242, 1);
+$JS2CA-2-rgba: rgba(217, 217, 217, 1);
+$JS2CA-3-rgba: rgba(191, 191, 191, 1);
+$JS2CA-4-rgba: rgba(140, 140, 140, 1);
+$JS2CA-5-rgba: rgba(94, 94, 94, 1);
+*/
+
+
+/* Color Theme Swatches in RGBA */
+.JS2CA-1-rgba {
+	color: rgba(242, 242, 242, 1);
+}
+.JS2CA-2-rgba {
+	color: rgba(217, 217, 217, 1);
+}
+.JS2CA-3-rgba {
+	color: rgba(191, 191, 191, 1);
+}
+.JS2CA-4-rgba {
+	color: rgba(140, 140, 140, 1);
+}
+.JS2CA-5-rgba {
+	color: rgba(94, 94, 94, 1);
+}
+
+/* 
+font-family: 'Inconsolata', monospace;
+
+font-family: 'Lato', sans-serif; */
