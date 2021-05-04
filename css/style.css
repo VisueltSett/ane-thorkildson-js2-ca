@@ -1,18 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=Lato:wght@300;400&display=swap");
-/* 
 
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=Lato:wght@300;400&display=swap" rel="stylesheet">  */
-
-/* 
-/* Color Theme Swatches in RGBA */
+/* SASS Color Theme Swatches in RGBA 
 $JS2CA-1-rgba: rgba(242, 242, 242, 1);
 $JS2CA-2-rgba: rgba(217, 217, 217, 1);
 $JS2CA-3-rgba: rgba(191, 191, 191, 1);
 $JS2CA-4-rgba: rgba(140, 140, 140, 1);
 $JS2CA-5-rgba: rgba(94, 94, 94, 1);
 */
-
 
 /* Color Theme Swatches in RGBA */
 .JS2CA-1-rgba {
@@ -31,7 +25,193 @@ $JS2CA-5-rgba: rgba(94, 94, 94, 1);
 	color: rgba(94, 94, 94, 1);
 }
 
-/* 
-font-family: 'Inconsolata', monospace;
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
 
-font-family: 'Lato', sans-serif; */
+body {
+	font-family: "Inconsolata", monospace;
+	font-weight: 400;
+	color: rgba(94, 94, 94, 1);
+	background: url(../images/old-wall-background_1500x968.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+h1,
+h3 {
+	font-family: "Lato", sans-serif;
+	margin-bottom: 2rem;
+}
+h1 {
+	color: rgb(125, 240, 125);
+	background-color: rgba(242, 242, 242, 0.65);
+	padding: 0.25rem 5rem;
+	margin-top: 2rem;
+	text-shadow: -2px 1px 3px rgba(94, 94, 94, 1);
+}
+
+active {
+	color: rgb(125, 240, 125);
+	text-shadow: -2px 1px 3px rgba(94, 94, 94, 1);
+}
+.underline {
+	text-decoration: underline;
+}
+
+span {
+	font-family: "Lato", sans-serif;
+}
+
+.navbar {
+	font-family: "Lato", sans-serif;
+	padding: 0.25rem 2rem;
+}
+
+.fas.fa-star {
+	color: rgb(228, 228, 9);
+	text-shadow: 0.25px 0.25px 2px rgba(94, 94, 94, 1);
+}
+#favoriteStar {
+	font-size: 1.8rem;
+}
+#favorite {
+	position: absolute;
+	font-size: 0.8rem;
+	bottom: 1rem;
+	right: 1rem;
+	cursor: pointer;
+}
+
+.bg-light {
+	background-color: rgba(242, 242, 242, 0.9) !important;
+}
+
+.container {
+	width: 90%;
+	margin: 2rem auto;
+	padding: 0;
+	height: 100%;
+}
+
+.books-container {
+	margin-top: 2rem;
+	display: flex;
+	flex-flow: row wrap;
+	align-content: flex-start;
+	height: 100%;
+}
+.books-container p {
+	display: inline-block;
+	margin-left: 1rem;
+}
+#summary {
+	margin-left: 0;
+	padding-top: 0.5rem;
+}
+
+.book {
+	margin: 1rem;
+	padding: 1rem;
+	background: rgba(242, 242, 242, 1);
+	border: 1px solid rgba(140, 140, 140, 1);
+	width: 320px;
+	min-height: 340px;
+	position: relative;
+	box-shadow: 3px 3px 4px rgba(140, 140, 140, 1);
+}
+
+/* Loader Styles */
+.lds-roller {
+	display: inline-block;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 2rem auto;
+}
+.lds-roller div {
+	animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: rgba(94, 94, 94, 1);
+	margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+	animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+	top: 63px;
+	left: 63px;
+}
+.lds-roller div:nth-child(2) {
+	animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+	top: 68px;
+	left: 56px;
+}
+.lds-roller div:nth-child(3) {
+	animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+	top: 71px;
+	left: 48px;
+}
+.lds-roller div:nth-child(4) {
+	animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+	top: 72px;
+	left: 40px;
+}
+.lds-roller div:nth-child(5) {
+	animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+	top: 71px;
+	left: 32px;
+}
+.lds-roller div:nth-child(6) {
+	animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+	top: 68px;
+	left: 24px;
+}
+.lds-roller div:nth-child(7) {
+	animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+	top: 63px;
+	left: 17px;
+}
+.lds-roller div:nth-child(8) {
+	animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+	top: 56px;
+	left: 12px;
+}
+@keyframes lds-roller {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* End Loader Styles */
