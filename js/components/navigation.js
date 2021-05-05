@@ -17,10 +17,10 @@ const navContainer = document.querySelector(".nav-container");
 // welcomeMessage = `<div>Looking good today, <span class="capitalize"> ${username}</span>!</div>`;
 // }
 
-let favLink = `<a class="nav-link ${path === "/favorites.html" ? "active" : ""}" href="favorites.html">Favorites <i class="fas fa-star fa-rotate-90"></i><span class="sr-only">(current)</span></a>`;
+let favoritesLink = `<a class="nav-link ${path === "/favorites.html" ? "active" : ""}" href="favorites.html">Favorites <i id="smallStar" class="fas fa-star fa-rotate-90"></i><span class="sr-only">(current)</span></a>`;
 
 navContainer.innerHTML = `<nav class="navbar navbar-expand-sm navbar-light bg-light">
-<a class="navbar-brand" href="/">Wild Books Publishing</a>
+<a class="navbar-brand" href="/">Wild Articles</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -31,7 +31,7 @@ navContainer.innerHTML = `<nav class="navbar navbar-expand-sm navbar-light bg-li
       <a class="nav-link ${path === "/" ? "active" : ""}" href="/">Home<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-      ${favLink}
+      ${favoritesLink}
     </li>
     <li class="nav-item">
     <div id="welcomeMessage"></div>

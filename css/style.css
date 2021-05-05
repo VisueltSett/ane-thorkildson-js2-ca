@@ -50,15 +50,15 @@ h3 {
 	margin-bottom: 2rem;
 }
 h1 {
-	color: rgb(125, 240, 125);
-	background-color: rgba(242, 242, 242, 0.65);
+	color: rgb(113, 223, 113,1);
+	background-color: rgba(242, 242, 242, 0.7);
 	padding: 0.25rem 5rem;
 	margin-top: 2rem;
-	text-shadow: -2px 1px 3px rgba(94, 94, 94, 1);
+	text-shadow: -2px 2px 3px rgba(94, 94, 94, 1);
 }
 
 active {
-	color: rgb(125, 240, 125);
+	color: rgb(113, 223, 113,1);
 	text-shadow: -2px 1px 3px rgba(94, 94, 94, 1);
 }
 .underline {
@@ -71,17 +71,25 @@ span {
 
 .navbar {
 	font-family: "Lato", sans-serif;
-	padding: 0.25rem 2rem;
+	padding: 0 2rem;
 }
 
-.fas.fa-star {
+.fa-star {
 	color: rgb(228, 228, 9);
-	text-shadow: 0.25px 0.25px 2px rgba(94, 94, 94, 1);
-}
-#favoriteStar {
+	text-shadow: 0.25px 0.25px 1px rgba(94, 94, 94, 1);
 	font-size: 1.8rem;
 }
-#favorite {
+
+#smallStar {
+	font-size: 1.2rem;
+	margin-left: .2rem;
+}
+
+.far {
+	color: rgb(113, 223, 113,.7);
+}
+
+.favorite {
 	position: absolute;
 	font-size: 0.8rem;
 	bottom: 1rem;
@@ -90,24 +98,42 @@ span {
 }
 
 .bg-light {
-	background-color: rgba(242, 242, 242, 0.9) !important;
+	background-color: rgba(242, 242, 242, 1) !important;
+}
+
+.articles-search {
+	background-color: rgb(113, 223, 113,.7);
+	padding: 0.3rem 1rem;
+	width: 70%;
+	color: rgb(0, 0, 0, 0.9);
+	border: 2px solid rgba(242, 242, 242, .8);
+	box-shadow: 3px 3px 4px rgba(140, 140, 140, 1);
+}
+.search-box-container {
+	width: 100%;
+	margin: 0 auto 3rem;
+	text-align: center;
+}
+#search-title {
+	padding: .3rem 0;
+	font-size: 1.2rem;
+	text-shadow: 3px 3px 6px rgba(242, 242, 242, 1);
 }
 
 .container {
 	width: 90%;
-	margin: 2rem auto;
+	margin: 5rem auto;
 	padding: 0;
 	height: 100%;
 }
 
-.books-container {
-	margin-top: 2rem;
+.articles-container {
 	display: flex;
 	flex-flow: row wrap;
 	align-content: flex-start;
 	height: 100%;
 }
-.books-container p {
+.articles-container p {
 	display: inline-block;
 	margin-left: 1rem;
 }
@@ -116,7 +142,7 @@ span {
 	padding-top: 0.5rem;
 }
 
-.book {
+.article {
 	margin: 1rem;
 	padding: 1rem;
 	background: rgba(242, 242, 242, 1);
@@ -126,6 +152,35 @@ span {
 	position: relative;
 	box-shadow: 3px 3px 4px rgba(140, 140, 140, 1);
 }
+
+.feedbackMessage {
+	background-color: rgba(242, 242, 242,1);
+	padding: .5rem 2em;
+	border: 1px solid rgba(242, 242, 242, 1);
+	box-shadow: 3px 3px 4px rgba(140, 140, 140, 1);
+	margin: 2rem auto;
+}
+
+.error{
+	color:rgba(242, 242, 242, 1);
+	background-color: rgb(145, 50, 50,1);
+	border: 1px solid rgb(145, 50, 50);
+}
+
+.succsess{
+	color:rgba(242, 242, 242, 1);
+	background-color: rgb(60, 138, 60,1);
+	border: 1px solid rgb(60, 138, 60);
+}
+
+
+.warning{
+	color:rgba(242, 242, 242, 1);
+	background-color: rgb(243, 162, 12,1);
+	border: 1px solid rgb(243, 162, 12);
+}
+
+
 
 /* Loader Styles */
 .lds-roller {
