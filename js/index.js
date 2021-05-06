@@ -19,6 +19,7 @@ try{
 
 
     filterArticles(articles);
+    
 
     searchArticles(articles);
 
