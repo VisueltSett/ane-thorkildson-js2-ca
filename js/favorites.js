@@ -1,12 +1,15 @@
 import createNav from "./components/navigation.js";
 import {getCurrentFavorites} from "./ui/getCurrentFavorites.js";
-
+import clearButton from "./components/clearButton.js";
 
 createNav();
 
 const favorites = getCurrentFavorites();
 
+clearButton();
+
 const articlesContainer = document.querySelector(".articles-container");
+
 
 if (favorites.length === 0) {
     articlesContainer.innerHTML = `<div class="feedbackMessage">You have not yet added any articles to your favorites list.</div>`;

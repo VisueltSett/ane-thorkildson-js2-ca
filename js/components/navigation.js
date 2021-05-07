@@ -19,7 +19,11 @@ const navContainer = document.querySelector(".nav-container");
 
 let favoritesLink = `<a class="nav-link ${path === "/favorites.html" ? "active" : ""}" href="favorites.html">Favorites <i id="smallStar" class="fas fa-star fa-rotate-90"></i><span class="sr-only">(current)</span></a>`;
 
-navContainer.innerHTML = `<nav class="navbar navbar-expand-sm navbar-light bg-light">
+let loginLink = `<a class="nav-link ${path === "/login.html" ? "active" : ""}" href="login.html">Login<span class="sr-only">(current)</span></a>`;
+
+
+
+navContainer.innerHTML = `<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 <a class="navbar-brand" href="/">Wild Articles</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -28,10 +32,13 @@ navContainer.innerHTML = `<nav class="navbar navbar-expand-sm navbar-light bg-li
 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     <li class="nav-item">
-      <a class="nav-link active ${path === "/" ? "active" : ""}" href="/">Home<span class="sr-only">(current)</span></a>
+      <a class="nav-link ${path === "/" ? "active" : ""}" href="/">Home<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
       ${favoritesLink}
+    </li>
+    <li class="nav-item">
+    ${loginLink}
     </li>
     <li class="nav-item">
     <div id="welcomeMessage"></div>

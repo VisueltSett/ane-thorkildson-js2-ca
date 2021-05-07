@@ -1,29 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=Lato:wght@300;400&display=swap");
 
-/* SASS Color Theme Swatches in RGBA 
-$JS2CA-1-rgba: rgba(242, 242, 242, 1);
-$JS2CA-2-rgba: rgba(217, 217, 217, 1);
-$JS2CA-3-rgba: rgba(191, 191, 191, 1);
-$JS2CA-4-rgba: rgba(140, 140, 140, 1);
-$JS2CA-5-rgba: rgba(94, 94, 94, 1);
+
+/* Color Theme Swatches in RGBA 
+$js2-ca2-2-rgba: rgba(252, 252, 252, 0.8);
+$js2-ca2-3-rgba: rgba(194, 130, 126, 1);
+$js2-ca2-4-rgba: rgba(168, 19, 50, 1);
+$js2-ca2-5-rgba: rgba(38, 29, 27, 1);
 */
 
-/* Color Theme Swatches in RGBA */
-.JS2CA-1-rgba {
-	color: rgba(242, 242, 242, 1);
-}
-.JS2CA-2-rgba {
-	color: rgba(217, 217, 217, 1);
-}
-.JS2CA-3-rgba {
-	color: rgba(191, 191, 191, 1);
-}
-.JS2CA-4-rgba {
-	color: rgba(140, 140, 140, 1);
-}
-.JS2CA-5-rgba {
-	color: rgba(0, 0, 0, .8);
-}
+
 
 * {
 	box-sizing: border-box;
@@ -38,8 +23,7 @@ body {
 body {
 	font-family: "Inconsolata", monospace;
 	font-weight: 400;
-	color: rgba(0, 0, 0, .8);
-	background: url(../images/old-wall-background_1500x968.jpg);
+	background: url(../images/shadow-palm-leaves-white-backdrop_1490x993.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -47,25 +31,24 @@ body {
 h1,
 h3 {
 	font-family: "Lato", sans-serif;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
+	color: rgba(168, 19, 50, 1);
 }
 h1 {
-	color: rgb(1, 148, 1);
-	background-color: rgba(242, 242, 242, 1);
-	padding: 0.25rem 5rem;
-	margin-top: 2rem;
-	text-shadow: -1px 1px 1px rgba(94, 94, 94, 1);
+	padding: 0.25rem 3rem;
+	margin-top: 1rem;
+	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
 }
 
 a.nav-link{
-	color: rgba(0, 0, 0, .8) !important;
+	color: rgba(252, 252, 252, 1) !important;
 }
 
-a.nav-link.active,
+a.nav-link:active,
 a.nav-link:hover  {
-	color: rgb(1, 148, 1) !important;
-	text-shadow: -1px 1px 1px rgba(94, 94, 94, 1);
+	color: rgb(247, 195, 205) !important;
 }
+a.nav-link:active,
 .underline {
 	text-decoration: underline;
 }
@@ -76,23 +59,18 @@ span {
 
 .navbar {
 	font-family: "Lato", sans-serif;
-	padding: 0 2rem;
-	
+	padding: 0 3rem;
 }
 
 .fa-star {
-	color: rgb(228, 228, 9);
-	text-shadow: 0.25px 0.25px 1px rgba(94, 94, 94, 1);
+	color: rgb(243, 231, 63);
+	text-shadow: 0.25px 0.25px 1px rgba(38, 29, 27, 1);
 	font-size: 1.8rem;
 }
 
 #smallStar {
 	font-size: 1.2rem;
-	margin-left: .2rem;
-}
-
-.far {
-	color: rgb(1, 148, 1);
+	margin-left: 0.2rem;
 }
 
 .favorite {
@@ -103,36 +81,64 @@ span {
 	cursor: pointer;
 }
 
-.bg-light {
-	background-color: rgba(242, 242, 242, 1) !important;
+.bg-dark {
+	background-color: rgba(38, 29, 27, 1) !important;
 }
 
 .articles-search {
-	background-color: rgb(113, 223, 113,.9);
+	background-color: rgba(252, 252, 252, 1);
 	padding: 0.3rem 1rem;
+	margin-left: 0.5rem;
 	width: 70%;
-	color: rgb(0, 0, 0, 0.9);
-	border: 2px solid rgba(242, 242, 242, .8);
-	box-shadow: 3px 3px 4px rgba(140, 140, 140, 1);
+	color: rgba(38, 29, 27, 1);
+	border: 1px solid rgba(38, 29, 27, 1);
+	box-shadow: 1px 1px 2px rgba(38, 29, 27, 0.25);
 }
 .search-box-container {
 	width: 100%;
-	margin: 0 auto 3rem;
+	margin: 0 auto 2rem;
 	text-align: center;
 }
 
 .container {
 	width: 90%;
-	margin: 5rem auto;
-	padding: 0;
+	margin: 2rem auto 6rem;
+	padding-bottom: 4rem;
 	height: 100%;
+	position: relative;
+}
+
+#clear-button {
+	font-family: "Lato", sans-serif;
+	padding: 0.5rem 1rem;
+	position: absolute;
+	bottom: 0;
+	right: 4rem;
+	box-shadow: 1px 1px 4px rgba(252, 252, 252, 1);
+	border: none;
+	background-color: rgba(168, 19, 50, 1);
+	color: rgba(252, 252, 252, 1);
+	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
+}
+
+#clear-button:hover, #clear-button:active{
+	border: 2px solid rgba(252, 252, 252,1)
+}
+
+#clear-button:active,
+#loginButton:hover,
+#loginButton:active {
+text-decoration:underline;
 }
 
 .articles-container {
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: center;
 	align-content: flex-start;
 	height: 100%;
+	margin: 0 auto;
+	padding: 0;
 }
 .articles-container p {
 	display: inline-block;
@@ -146,42 +152,75 @@ span {
 .article {
 	margin: 1rem;
 	padding: 1rem;
-	background: rgba(242, 242, 242, 1);
-	border: 1px solid rgba(140, 140, 140, 1);
+	background: rgba(252, 252, 252, 0.8);
+	border: 1px solid rgba(38, 29, 27, 0.25);
 	width: 320px;
 	min-height: 340px;
 	position: relative;
-	box-shadow: 3px 3px 4px rgba(140, 140, 140, 1);
+	box-shadow: 3px 3px 4px rgba(38, 29, 27, 0.25);
+}
+
+.form-container{
+	margin: 2rem auto;
+	padding: 2rem;
+	background: rgba(252, 252, 252, 0.7);
+	border: 1px solid rgba(38, 29, 27, 0.25);
+	width: 500px;
+	height: 300px;
+	position: relative;
+	box-shadow: 3px 3px 4px rgba(38, 29, 27, 0.25);
+}
+label{
+	width: 100%;
+	margin: .5rem auto 0;
+}
+
+input {
+	width: 80%;
+	margin: 0 auto;
+	padding: 0.4rem;
+}
+
+#loginButton{
+	font-family: "Lato", sans-serif;
+	width: 40%;
+	margin-top: 2rem;
+	padding: .5rem 0;
+	position:absolute;
+	bottom: 2rem;
+	right: 2rem;
+	box-shadow: 1px 1px 4px rgba(252, 252, 252, 1);
+	border: none;
+	background-color: rgba(168, 19, 50, 1);
+	color: rgba(252, 252, 252, 1);
+	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
 }
 
 .feedbackMessage {
-	background-color: rgba(242, 242, 242,1);
-	padding: .5rem 2em;
-	border: 1px solid rgba(242, 242, 242, 1);
-	box-shadow: 3px 3px 4px rgba(140, 140, 140, 1);
+	background-color: rgba(252, 252, 252, 0.8);
+	padding: 0.5rem 2em;
+	border: 1px solid rgba(38, 29, 27, 0.25);
+	box-shadow: 3px 3px 4px rgba(38, 29, 27, 0.25);
 	margin: 2rem auto;
 }
 
-.error{
-	color:rgba(242, 242, 242, 1);
-	background-color: rgb(145, 50, 50,1);
+.error {
+	color: rgba(252, 252, 252, 0.8);
+	background-color: rgb(145, 50, 50, 1);
 	border: 1px solid rgb(145, 50, 50);
 }
 
-.succsess{
-	color:rgba(242, 242, 242, 1);
-	background-color: rgb(60, 138, 60,1);
+.succsess {
+	color: rgba(252, 252, 252, 0.8);
+	background-color: rgb(60, 138, 60, 1);
 	border: 1px solid rgb(60, 138, 60);
 }
 
-
-.warning{
-	color:rgba(242, 242, 242, 1);
-	background-color: rgb(243, 162, 12,1);
+.warning {
+	color: rgba(252, 252, 252, 0.8);
+	background-color: rgb(243, 162, 12, 1);
 	border: 1px solid rgb(243, 162, 12);
 }
-
-
 
 /* Loader Styles */
 .lds-roller {
