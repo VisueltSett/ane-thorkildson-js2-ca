@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=Lato:wght@300;400&display=swap");
 
-
 /* Color Theme Swatches in RGBA 
 $js2-ca2-2-rgba: rgba(252, 252, 252, 0.8);
 $js2-ca2-3-rgba: rgba(194, 130, 126, 1);
 $js2-ca2-4-rgba: rgba(168, 19, 50, 1);
 $js2-ca2-5-rgba: rgba(38, 29, 27, 1);
 */
-
-
 
 * {
 	box-sizing: border-box;
@@ -40,13 +37,14 @@ h1 {
 	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
 }
 
-a.nav-link{
+a.nav-link {
 	color: rgba(252, 252, 252, 1) !important;
 }
 
 a.nav-link:active,
-a.nav-link:hover  {
-	color: rgb(247, 195, 205) !important;
+a.nav-link:hover,
+a.active {
+	color: rgb(245, 118, 143) !important;
 }
 a.nav-link:active,
 .underline {
@@ -108,29 +106,6 @@ span {
 	position: relative;
 }
 
-#clear-button {
-	font-family: "Lato", sans-serif;
-	padding: 0.5rem 1rem;
-	position: absolute;
-	bottom: 0;
-	right: 4rem;
-	box-shadow: 1px 1px 4px rgba(252, 252, 252, 1);
-	border: none;
-	background-color: rgba(168, 19, 50, 1);
-	color: rgba(252, 252, 252, 1);
-	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
-}
-
-#clear-button:hover, #clear-button:active{
-	border: 2px solid rgba(252, 252, 252,1)
-}
-
-#clear-button:active,
-#loginButton:hover,
-#loginButton:active {
-text-decoration:underline;
-}
-
 .articles-container {
 	display: flex;
 	flex-flow: row wrap;
@@ -160,7 +135,7 @@ text-decoration:underline;
 	box-shadow: 3px 3px 4px rgba(38, 29, 27, 0.25);
 }
 
-.form-container{
+.form-container {
 	margin: 2rem auto;
 	padding: 2rem;
 	background: rgba(252, 252, 252, 0.7);
@@ -170,23 +145,23 @@ text-decoration:underline;
 	position: relative;
 	box-shadow: 3px 3px 4px rgba(38, 29, 27, 0.25);
 }
-label{
+label {
 	width: 100%;
-	margin: .5rem auto 0;
+	margin: 0.5rem auto 0;
 }
 
 input {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	padding: 0.4rem;
 }
 
-#loginButton{
+#login-button {
 	font-family: "Lato", sans-serif;
 	width: 40%;
 	margin-top: 2rem;
-	padding: .5rem 0;
-	position:absolute;
+	padding: 0.5rem 0;
+	position: absolute;
 	bottom: 2rem;
 	right: 2rem;
 	box-shadow: 1px 1px 4px rgba(252, 252, 252, 1);
@@ -194,6 +169,35 @@ input {
 	background-color: rgba(168, 19, 50, 1);
 	color: rgba(252, 252, 252, 1);
 	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
+}
+
+#clear-button:active,
+#login-button:hover,
+#loginButton:active,
+#logoutButton:active {
+	text-decoration: underline;
+}
+
+#clear-button,
+#logoutButton {
+	font-family: "Lato", sans-serif;
+	padding: 0.5rem 1rem;
+	box-shadow: 1px 1px 4px rgba(252, 252, 252, 1);
+	border: none;
+	background-color: rgba(168, 19, 50, 1);
+	color: rgba(252, 252, 252, 1);
+	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
+}
+#clear-button {
+	position: absolute;
+	bottom: 0;
+	right: 4rem;
+}
+#clear-button:hover,
+#clear-button:active,
+#logoutButton:active,
+#logoutButton:hover {
+	border: 2px solid rgba(252, 252, 252, 1);
 }
 
 .feedbackMessage {

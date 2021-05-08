@@ -1,25 +1,33 @@
+import { getUsernameFromLocalStorage } from ".././storage/localStorage.js";
+
+
 export default function createNav() {
-    const {path} = document.location;
+    const {pathname} = document.location;
+    console.log(pathname);
 
-const navContainer = document.querySelector(".nav-container");
+  const navContainer = document.querySelector(".nav-container");
 
-// const username = getUsername();
+  const username = getUsernameFromLocalStorage();
 
-// let authLink = `<a class="nav-link ${path === "/login.html" ? "active" : ""}" href="login.html">Login</a>`;
+  let favoritesLink = `<a class="nav-link ${pathname === "/favorites.html" ? "active" : ""}" href="favorites.html">Favorites <i id="smallStar" class="fas fa-star fa-rotate-90"></i><span class="sr-only">(current)</span></a>`;
 
-// if (username) {
-//     authLink = `<button style="display:inline-block;" id="logout" type="button">Logout</button>`;
-//   }
+  let loginLink = `<a class="nav-link ${pathname === "/login.html" ? "active" : ""}" href="login.html">Login<span class="sr-only">(current)</span></a>`;
 
-// let welcomeMessage = "";
+ if (username) {
+    loginLink = `<button style="display:inline-block;" id="logoutButton" type="button">Logout</button>`;
+  }
 
-// if (username){
-// welcomeMessage = `<div>Looking good today, <span class="capitalize"> ${username}</span>!</div>`;
-// }
+let addNewArticle = "";
 
-let favoritesLink = `<a class="nav-link ${path === "/favorites.html" ? "active" : ""}" href="favorites.html">Favorites <i id="smallStar" class="fas fa-star fa-rotate-90"></i><span class="sr-only">(current)</span></a>`;
+if (username) {
+  addNewArticle = `<a class="nav-link ${pathname === "/addNewArticle.html" ? "active" : ""}" href="addNewArticle.html">Add Article<span class="sr-only">(current)</span></a>`;
+}
 
-let loginLink = `<a class="nav-link ${path === "/login.html" ? "active" : ""}" href="login.html">Login<span class="sr-only">(current)</span></a>`;
+let welcomeMessage = "";
+
+if (username){
+welcomeMessage = `<div>Looking good today, <span class="capitalize"> ${username}</span>!</div>`;
+ }
 
 
 
@@ -32,21 +40,20 @@ navContainer.innerHTML = `<nav class="navbar navbar-expand-sm navbar-dark bg-dar
 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     <li class="nav-item">
-      <a class="nav-link ${path === "/" ? "active" : ""}" href="/">Home<span class="sr-only">(current)</span></a>
+      <a class="nav-link ${pathname === "/" ? "active" : ""}" href="/">Home<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
       ${favoritesLink}
     </li>
     <li class="nav-item">
-    ${loginLink}
+    <div id="addNewArticle"></div>}
     </li>
     <li class="nav-item">
     <div id="welcomeMessage"></div>
     </li>
     <li class="nav-item">
-    <div id="logoutBtnContainer"></div>
+    ${loginLink}
     </li>
-   
   </ul>
 </div>
 </nav>`;

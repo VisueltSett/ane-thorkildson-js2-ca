@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Wild Articles Login</title>
+		<title>Wild Articles Add New Article</title>
 		<link
 			rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -21,25 +21,30 @@
 			src="https://kit.fontawesome.com/62db01abf1.js"
 			crossorigin="anonymous"
 		></script>
-		<script src="js/login.js" type="module" defer></script>
+		<script src="js/addNewArticle.js" type="module" defer></script>
 	</head>
 	<body>
 		<div class="nav-container"></div>
-		<h1>Login to do your thing</h1>
+		<h1>Call your crazy and add a new Wild Article</h1>
 		<div class="container">
 			<div class="form-container">
-				<form class="login-form">
-					<div class="feedback-container"></div>
-					<div>
-						<label for="username"> Username/email</label>
-						<input id="username" />
-					</div>
-					<div>
-						<label for="password"> Password</label>
-						<input id="password" type="password" />
-					</div>
-					<button id="login-button">Login</button>
-				</form>
+                <form class="add-article-form">
+                    <div class="feedback-container"></div>
+
+                    <div>
+                        <label for="name">Article Name</label>
+                        <input id="name" />
+                    </div>
+                    <div>
+                        <label for="author">Author</label>
+                        <input id="author" />
+                    </div>
+                    <div>
+                        <label for="summary">Article Summary</label>
+                        <textarea id="summary"></textarea>
+                    </div>
+                    <button id="add-article-button">Add Article</button>
+                </form>
 			</div>
 		</div>
 		<script
