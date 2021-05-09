@@ -6,9 +6,10 @@ import {apiUrl} from "./settings/apiUrl.js";
 createNav();
 
 const addArticleForm = document.querySelector(".add-article-form");
-const FeedbackContainer = document.querySelector(".feedback-container");
-const articleName = document.querySelector("#name");
+const feedbackContainer = document.querySelector(".feedback-container");
+const articleTitle = document.querySelector("#title");
 const author = document.querySelector("#author");
+const published = document.querySelector("#published_at");
 const summary = document.querySelector("#summary");
 
 
@@ -17,27 +18,28 @@ addArticleForm.addEventListener("submit",submitNewArticle);
 function submitNewArticle(event){
     event.preventDefault();
 
-    FeedbackContainer.innerHTML ="";
+    feedbackContainer.innerHTML ="";
 
-const articleNameValue = articleName.value.trim();
+const articleTitleValue = articleTitle.value.trim();
+const publishedValue = parseFloat(published.value);
 const authorValue = author.value.trim();
 const summaryValue = summary.value.trim();
 
-console.log(articleNameValue);
+console.log(articleTitleValue);
 
-if(articleNameValue.length === 0 || authorValue.length === 0 || summaryValue.length === 0){
+if(articleTitleValue.length === 0 || authorValue.length === 0 || publishedValue.length === 0 || isNaN(published.value) || summaryValue.length === 0){
     return feedbackMessage("warning","Please add valid values to the form inputs", ".feedback-container");
 }
 
 
-addArticle (articleNameValue, authorValue, summaryValue);
+addArticle (articleTitleValue, authorValue, publishedValue, summaryValue);
 
 }
 
-async function addArticle (articleName, author, summary){
+async function addArticle (articleTitle, author, published, summary){
     const url = apiUrl + "articles";
 
-    const data = JSON.stringify({name: articleName, author: author, summary: summary});
+    const data = JSON.stringify({title: articleTitle, author: author, published: published, summary: summary});
 
     const token = getJWTToken();
 

@@ -19,12 +19,12 @@ if (favorites.length === 0) {
 
 favorites.forEach((favorite) => {
 
-    articlesContainer.innerHTML += `<div class="article">
+    articlesContainer.innerHTML += `<a class="article" href="articleDetails.html?id=${favorite.id}">
     <h3><span>Title: </span> ${favorite.title}</h3>
     <div><span class="underline">Author:</span><p>${favorite.author}</p></div>
     <div><span class="underline">Published:</span><p>${favorite.published}</p></div>
-    <div><span class="underline">Summary:</span> <p id="summary">${favorite.summary}</></div>
+    <div><span class="underline">Summary:</span> <p id="articleSummary">${favorite.summary}</></div>
     <div class="favorite"><i class="fas fa-star" data-id="${favorite.id}" data-title="${favorite.title} data-author="${favorite.author}" data-published="${favorite.published}" data-summary="${favorite.summary}"></i></div>
-    </div>`;
+    </a>`;
 
 });

@@ -39,13 +39,13 @@ export function filterArticles(articlesToFilter) {
         }
 
 
-        articlesContainer.innerHTML += `<div class="article"> 
+        articlesContainer.innerHTML += `<a class="article" href="articleDetails.html?id=${article.id}">
         <h3><span>Title: </span> ${article.title}</h3>
         <div><span class="underline">Author:</span><p>${article.author}</p></div>
         <div><span class="underline">Published:</span><p>${publicationDate}</p></div>
-        <div><span class="underline">Summary:</span> <p id="summary">${article.summary}</></div>
+        <div><span class="underline">Summary:</span> <p id="articleSummary">${article.summary}</></div>
         <div class="favorite"><span>Add to favorites</span> <i class="${favoriteStar} fa-star" data-id="${article.id}" data-title="${article.title}" data-author="${article.author}" data-published="${month}/${dte}/${year}" data-summary="${article.summary}"></i></div>
-        </div>`;
+        </a>`;
 
     });
 

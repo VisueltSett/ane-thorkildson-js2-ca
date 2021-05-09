@@ -5,16 +5,16 @@ export function saveToLocalStorage(favoriteArticles){
 }
 
 
-const jwtKey = "token";
+const jwtKey = "jwtToken";
 const userKey = "user";
 
 
-export function saveLoginJWTToken(token) {
-    saveLoginToStorage(jwtKey, token);
+export function saveJWTToken(jwtToken) {
+    saveLoginToStorage(jwtKey, jwtToken);
 }
 
 export function getJWTToken() {
-    return getLoginFromLocalStorage(jwtKey);
+    return getLoginFromStorage(jwtKey);
 }
 
 export function saveUserObject(user) {
@@ -22,21 +22,25 @@ export function saveUserObject(user) {
 }
 
 
-export function getUsernameFromLocalStorage(username) { 
-    const user = getLoginFromLocalStorage(userKey);
+export function getUserObject() {
+    const user = getLoginFromStorage(userKey);
 
     if(user) {
         return user.username;
-    }else {
+    }
         return null;
     }
+
+export function clearLocalStorage() {
+    localStorage.removeItem("jwtToken");
+    localStorage.removeItem("user");
 }
 
 
 function saveLoginToStorage(key, value){
     localStorage.setItem(key,JSON.stringify(value));
 }
-function getLoginFromLocalStorage(key){
+function getLoginFromStorage(key){
     const value = localStorage.getItem(key);
 
     if (!value) {

@@ -1,5 +1,3 @@
-import {getCurrentFavorites} from ".././ui/getCurrentFavorites.js";
-
 export default function clearButton(){
     const clearButton = document.querySelector("#clear-button");
 
@@ -7,7 +5,7 @@ export default function clearButton(){
 
     clearButton.onclick = (clearStorage) => {
         if(confirm("Are you sure you want to clear all your favorites?")) {
-            localStorage.clear();
+            localStorage.removeItem("favorites");
             articlesContainer.innerHTML = `<div class="feedbackMessage">You have no articles in your favorites list.</div>`;
             clearButton.disabled = true;
         }

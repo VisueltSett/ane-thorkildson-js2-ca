@@ -1,5 +1,5 @@
-import { getUsernameFromLocalStorage } from ".././storage/localStorage.js";
-
+import {getUserObject} from ".././storage/localStorage.js";
+import logout from "./logoutButton.js";
 
 export default function createNav() {
     const {pathname} = document.location;
@@ -7,26 +7,25 @@ export default function createNav() {
 
   const navContainer = document.querySelector(".nav-container");
 
-  const username = getUsernameFromLocalStorage();
+  const username = getUserObject();
 
   let favoritesLink = `<a class="nav-link ${pathname === "/favorites.html" ? "active" : ""}" href="favorites.html">Favorites <i id="smallStar" class="fas fa-star fa-rotate-90"></i><span class="sr-only">(current)</span></a>`;
 
   let loginLink = `<a class="nav-link ${pathname === "/login.html" ? "active" : ""}" href="login.html">Login<span class="sr-only">(current)</span></a>`;
 
  if (username) {
-    loginLink = `<button style="display:inline-block;" id="logoutButton" type="button">Logout</button>`;
+    loginLink = `<button id="logoutButton" type="button">Logout</button>`;
   }
 
 let addNewArticle = "";
+let welcomeMessage = "";
 
 if (username) {
   addNewArticle = `<a class="nav-link ${pathname === "/addNewArticle.html" ? "active" : ""}" href="addNewArticle.html">Add Article<span class="sr-only">(current)</span></a>`;
 }
 
-let welcomeMessage = "";
-
 if (username){
-welcomeMessage = `<div>Looking good today, <span class="capitalize"> ${username}</span>!</div>`;
+welcomeMessage = `<div>Happy to see you,<br/><span class="capitalize"> ${username}</span>!</div>`;
  }
 
 
@@ -45,11 +44,11 @@ navContainer.innerHTML = `<nav class="navbar navbar-expand-sm navbar-dark bg-dar
     <li class="nav-item">
       ${favoritesLink}
     </li>
-    <li class="nav-item">
-    <div id="addNewArticle"></div>}
+    <li class="nav-item" id="addNewArticle">
+    ${addNewArticle}
     </li>
-    <li class="nav-item">
-    <div id="welcomeMessage"></div>
+    <li class="nav-item" id="welcomeMessage">
+    ${welcomeMessage}
     </li>
     <li class="nav-item">
     ${loginLink}
@@ -58,5 +57,6 @@ navContainer.innerHTML = `<nav class="navbar navbar-expand-sm navbar-dark bg-dar
 </div>
 </nav>`;
 
+logout();
 
 }

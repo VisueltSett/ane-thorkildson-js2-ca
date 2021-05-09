@@ -28,13 +28,18 @@ body {
 h1,
 h3 {
 	font-family: "Lato", sans-serif;
-	margin-bottom: 1rem;
+	margin: 1rem 0 2rem;
 	color: rgba(168, 19, 50, 1);
 }
 h1 {
 	padding: 0.25rem 3rem;
 	margin-top: 1rem;
 	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
+}
+
+a.article {
+	color: rgba(38, 29, 27, 1);
+	text-decoration: none;
 }
 
 a.nav-link {
@@ -57,7 +62,29 @@ span {
 
 .navbar {
 	font-family: "Lato", sans-serif;
-	padding: 0 3rem;
+	padding-left: 3rem;
+}
+
+ul.navbar-nav {
+	width: 100% !important;
+	position: relative;
+	align-items: flex-end;
+}
+
+ul.navbar-nav li {
+	margin-right: 1rem;
+}
+
+ul.navbar-nav li:last-child {
+	position: absolute;
+	right: 1rem;
+}
+
+#welcomeMessage {
+	color: rgb(245, 118, 143);
+	text-shadow: 0.25px 0.25px rgba(252, 252, 252, 0.8);
+	margin-left: 5rem;
+	font-size: 0.9rem;
 }
 
 .fa-star {
@@ -67,7 +94,7 @@ span {
 }
 
 #smallStar {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	margin-left: 0.2rem;
 }
 
@@ -102,7 +129,7 @@ span {
 	width: 90%;
 	margin: 2rem auto 6rem;
 	padding-bottom: 4rem;
-	height: 100%;
+	min-height: 100%;
 	position: relative;
 }
 
@@ -119,18 +146,18 @@ span {
 	display: inline-block;
 	margin-left: 1rem;
 }
-#summary {
+#articleSummary {
 	margin-left: 0;
 	padding-top: 0.5rem;
 }
 
 .article {
 	margin: 1rem;
-	padding: 1rem;
+	padding: 1.5rem;
 	background: rgba(252, 252, 252, 0.8);
 	border: 1px solid rgba(38, 29, 27, 0.25);
-	width: 320px;
-	min-height: 340px;
+	width: 340px;
+	min-height: 400px;
 	position: relative;
 	box-shadow: 3px 3px 4px rgba(38, 29, 27, 0.25);
 }
@@ -141,16 +168,68 @@ span {
 	background: rgba(252, 252, 252, 0.7);
 	border: 1px solid rgba(38, 29, 27, 0.25);
 	width: 500px;
-	height: 300px;
+	height: 320px;
 	position: relative;
 	box-shadow: 3px 3px 4px rgba(38, 29, 27, 0.25);
 }
+
+.add-article-form,
+.edit-article-form {
+	font-family: "Lato", sans-serif;
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	min-height: 560px;
+}
+.edit-article-form {
+	display: none;
+}
+
+#add-article-button,
+#edit-article-button {
+	width: 40%;
+	padding: 0.5rem 0;
+	position: absolute;
+	bottom: 2rem;
+	right: 0;
+	box-shadow: 1px 1px 4px rgba(252, 252, 252, 1);
+	border: none;
+	background-color: rgb(60, 138, 60);
+	color: rgba(252, 252, 252, 1);
+	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
+}
+
+.article-form-container {
+	position: relative;
+	height: 800px;
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 3rem;
+}
+#delete-button {
+	width: 40%;
+	padding: 0.5rem 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	box-shadow: 1px 1px 4px rgba(252, 252, 252, 1);
+	border: none;
+	background-color: rgba(168, 19, 50, 1);
+	color: rgba(252, 252, 252, 1);
+	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
+}
+
+#summary {
+	min-height: 200px;
+}
+
 label {
 	width: 100%;
 	margin: 0.5rem auto 0;
 }
 
-input {
+input,
+#summary {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0.4rem;
@@ -166,7 +245,7 @@ input {
 	right: 2rem;
 	box-shadow: 1px 1px 4px rgba(252, 252, 252, 1);
 	border: none;
-	background-color: rgba(168, 19, 50, 1);
+	background-color: rgb(60, 138, 60);
 	color: rgba(252, 252, 252, 1);
 	text-shadow: -1px 1px 1px rgba(38, 29, 27, 1);
 }
@@ -174,7 +253,11 @@ input {
 #clear-button:active,
 #login-button:hover,
 #loginButton:active,
-#logoutButton:active {
+#logoutButton:active,
+#add-article-button:hover,
+#add-article-button:active,
+#delete-button:hover,
+#delete-button:active {
 	text-decoration: underline;
 }
 
@@ -196,7 +279,9 @@ input {
 #clear-button:hover,
 #clear-button:active,
 #logoutButton:active,
-#logoutButton:hover {
+#logoutButton:hover,
+#add-article-button:active,
+#delete-button:active {
 	border: 2px solid rgba(252, 252, 252, 1);
 }
 
@@ -214,7 +299,7 @@ input {
 	border: 1px solid rgb(145, 50, 50);
 }
 
-.succsess {
+.success {
 	color: rgba(252, 252, 252, 0.8);
 	background-color: rgb(60, 138, 60, 1);
 	border: 1px solid rgb(60, 138, 60);

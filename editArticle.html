@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Wild Articles Login</title>
+		<title>Edit Article</title>
 		<link
 			rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -21,24 +21,45 @@
 			src="https://kit.fontawesome.com/62db01abf1.js"
 			crossorigin="anonymous"
 		></script>
-		<script src="js/login.js" type="module" defer></script>
+		<script src="js/editArticle.js" type="module" defer></script>
 	</head>
 	<body>
 		<div class="nav-container"></div>
-		<h1>Login to do your thing</h1>
+		<h1>Wild Article - Edit that stuff</h1>
+
 		<div class="container">
-			<div class="form-container">
+			<div class="lds-roller">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="article-form-container">
+				<div class="delete-container"></div>
 				<div class="feedback-container"></div>
-				<form class="login-form">
+				<form class="edit-article-form">
 					<div>
-						<label for="username"> Username/email</label>
-						<input id="username" />
+						<label for="title">Article Title</label>
+						<input id="title" />
 					</div>
 					<div>
-						<label for="password"> Password</label>
-						<input id="password" type="password" />
+						<label for="author">Author</label>
+						<input id="author" />
 					</div>
-					<button id="login-button">Login</button>
+					<div>
+						<label for="published_at">Published (mm/dd/yyyy)</label>
+						<input id="published_at" />
+					</div>
+					<div>
+						<label for="summary">Article Summary</label>
+						<textarea id="summary"></textarea>
+					</div>
+					<input type="hidden" id="id" />
+					<button id="edit-article-button">Save edits</button>
 				</form>
 			</div>
 		</div>
